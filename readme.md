@@ -128,3 +128,13 @@ let numero: number; // Variável do tipo number, ou seja só pode ser adicionado
 numero = '5'; // Ao compilar, vai retornar um erro, informando que a variavel numero tem que ser do tipo number.
 // Correto seria 'numero = 5;'
 ```
+
+#### Tipos primitivos em TypeScript
+
+`number`		1, 5.3, -10 (Todos os números, sem diferenciação entre int, float etc)
+
+`string`		'Hi', "Hi", ´Hi´ (Todo tipo de texto, o ultimo é pra ser crase, não acento agudo)
+
+`boolean`		true, false (Apenas esses dois, sem truthy ou falsy)
+
+`objetc`		{age: 30} (Qualquer objeto JavaScript, tipos mais especificos são possiveis)
