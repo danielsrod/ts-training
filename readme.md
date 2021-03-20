@@ -114,3 +114,17 @@ Nota-se que os tipos sumiram (`:number` nos argumentos da função) e as variáv
 1. Em relação ao `:number`, como já foi dito, é uma feature do próprio TypeScript. O JavaScript não suporta essas declarações. Então depois que `tsc app.ts` foi rodado, ele removeu as features que o JavaScript não suporta.
 2. Em relação as declarações com `const` são configuráveis mais pra frente.
 
+Então essa é a função principal do TypeScript, checar os tipos e nos avisar previamente quando pode ocorrer um bug
+
+```typescript
+let numero; // Variável do tipo any, ou seja pode ser qualquer coisa (string, number, boolean etc)
+numero = '5'; // Tudo certo, pois foi declarado que a variavel number, apesar do nome pode ser qualquer coisa
+```
+
+Mas agora, veja este caso:
+
+```typescript
+let numero: number; // Variável do tipo number, ou seja só pode ser adicionado valores do tipo number.
+numero = '5'; // Ao compilar, vai retornar um erro, informando que a variavel numero tem que ser do tipo number.
+// Correto seria 'numero = 5;'
+```
