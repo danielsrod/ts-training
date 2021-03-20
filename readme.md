@@ -148,7 +148,11 @@ const person: { // Deixando claro como as keys vão se comportar.
     name: string;
     age: number;
     alive: boolean;
-} 
+} = {
+    name: "Daniel",
+    age: 21,
+    alive: true
+}
 ```
 
  
