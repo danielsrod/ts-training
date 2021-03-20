@@ -46,7 +46,7 @@ function add(number1: number, number2: number) {
 
 Da pra notar que nos argumentos da função, foi colocado `: number` depois das variáveis. Isso é um recurso do TypeScript que não existe no JavaScript.
 
-Caso eu passe qualquer variável que não seja do tipo number, o compilador de TypeScript vai me retornar um erro.
+Caso eu passe qualquer variável que não seja do tipo `number`, o compilador de TypeScript vai me retornar um erro.
 
 Exemplo: 
 
