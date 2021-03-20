@@ -138,3 +138,17 @@ numero = '5'; // Ao compilar, vai retornar um erro, informando que a variavel nu
 `boolean`		true, false (Apenas esses dois, sem truthy ou falsy)
 
 `objetc`		{age: 30} (Qualquer objeto JavaScript, tipos mais especificos são possiveis)
+
+### Objetos
+
+Em TypeScript, podemos especificar ainda mais os tipos de um objeto. Exemplo:
+
+```typescript
+const person: { // Deixando claro como as keys vão se comportar.
+    name: string;
+    age: number;
+    alive: boolean;
+} 
+```
+
+ 
