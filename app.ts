@@ -1,8 +1,10 @@
-function add(n1: number, n2: number) {
-    return n1 + n2
+// Código em TypeScript
+
+function add(number1: number, number2: number) {
+    return number1 + number2;
 }
 
-let nu1 = 5;
-const nu2 = 10;
+const n1 = 7;
+const n2 = 10;
 
-console.log(add(nu1, nu2));
+console.log(add(n1, n2));

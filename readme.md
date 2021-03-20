@@ -17,6 +17,7 @@ A princípio a função está tudo ok, mas a partir do momento em que o `input` 
 Vamos ver:
 
 ```javascript
+// Código em JavaScript
 function add(number1, number2) {
     return number1 + number2
 }
@@ -38,8 +39,78 @@ Vejamos um exemplo:
 ```typescript
 // Código em TypeScript
 
-function add() {
-    
+function add(number1: number, number2: number) {
+    return number1 + number2;
 }
 ```
+
+Da pra notar que nos argumentos da função, foi colocado `: number` depois das variáveis. Isso é um recurso do TypeScript que não existe no JavaScript.
+
+Caso eu passe qualquer variável que não seja do tipo number, o compilador de TypeScript vai me retornar um erro.
+
+Exemplo: 
+
+```typescript
+// Código em TypeScript
+
+function add(number1: number, number2: number) {
+    return number1 + number2;
+}
+
+const n1 = '7';
+const n2 = 10;
+
+console.log(add(n1, n2));
+```
+
+Ao escrevermos o código acima, podemos tentar compilar ele para JavaScript rodando o seguinte comando: `tsc NomeDoArquivo.ts`
+
+Após o comando, vai ser criado um arquivo com o mesmo nome mas com extensão JavaScript. No caso iria ser criado um arquivo chamado `NomeDoArquivo.js` na mesma pasta onde se encontra o arquivo TypeScript compilado.
+
+#### Pera o arquivo foi compilado, então funcionou ?
+
+Nope. O arquivo TS foi compilou e transformado para JavaScript, mas foi encontrado um erro na produção.
+
+```powershell
+app.ts:10:17 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+
+10 console.log(add(n1, n2));
+                          ~~
+Found 1 error.                          
+```
+
+Como dito anteriormente, deixamos explicito que o tipo do argumento teria que ser um `number`, e não uma `string` como foi passada.
+
+Rodando o código com os tipos certos teríamos:
+
+```typescript
+// Código em TypeScript
+
+function add(number1: number, number2: number) {
+    return number1 + number2;
+}
+
+const n1 = 7;
+const n2 = 10;
+
+console.log(add(n1, n2));
+```
+
+Indo no terminal, digitando `tsc app.ts`, o arquivo app.js antigo seria sobrescrito com o novo app.js compilado. O arquivo seria exatamente assim.
+
+```javascript
+// Código em JavaScript
+function add(number1, number2) {
+    return number1 + number2;
+}
+var n1 = 7;
+var n2 = 10;
+console.log(add(n1, n2));
+
+```
+
+Nota-se que os tipos sumiram (`:number` nos argumentos da função) e as variáveis que eram declaradas com `const` agora estão com `var`.
+
+1. Em relação ao `:number`, como já foi dito, é uma feature do próprio TypeScript. O JavaScript não suporta essas declarações. Então depois que `tsc app.ts` foi rodado, ele removeu as features que o JavaScript não suporta.
+2. Em relação as declarações com `const` são configuráveis mais pra frente.
 
