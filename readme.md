@@ -1,6 +1,6 @@
 # TypeScript
 
-- TypeScript adiciona tipagem para o JavaScript. 
+- Podemos dizer que o TypeScript é, em curtas linhas, um JavaScript com tipagem. 
 - TypeScript não é compreendido pelo navegador web ou pelo node.
 
 - A função do TypeScript é apenas na parte da produção, para encontrar erros antes deles acontecerem.
