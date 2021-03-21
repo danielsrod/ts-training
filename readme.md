@@ -141,7 +141,7 @@ numero = '5'; // Ao compilar, vai retornar um erro, informando que a variavel nu
 
 `array` 		[1, 2, 3] (No caso uma `array` de `number`s', mas pode ser de qualquer coisa)
 
-### Objetos
+### Objects
 
 Em TypeScript, podemos especificar ainda mais os tipos de um objeto. Exemplo:
 
@@ -198,3 +198,28 @@ for(const friend of friends){
 Dentro do for, foi criado uma constante chamada `friend` , que automaticamente recebe o tipo `string`, pois foi declarado que a array `friends` seria uma array de strings.
 
 OBS: na variável `friend`, podemos usar as funções básicas de string > `.toUpperCase( )` 
+
+### Tuple
+
+As `Tuples` são basicamente `arrays` com tipo e tamanho definidos.
+
+```typescript
+const person {
+    name: string;
+    age: number;
+    hobbies: string[];
+    role: [number, string];
+} = {
+    name: "Daniel",
+    age: 21,
+    hobbies: ['football', 'csgo'],
+    role: [2, 'yoink']
+}
+```
+
+Em `role: [number, string]` deixando explicitado que queremos uma array com 2 elementos e com os tipos definidos. Sendo o `role[0]` sendo um `number` e `role[1]` sendo `string`.
+
+OBS.: Se rodarmos `person.role.push('banger')`, infelizmente o TypeScript não consegue detectar esse erro.
+Mas caso rodemos `person.role = ['av', 3]`, teremos um erro já que os tipos não batem.
+Ou, se rodarmos `person.role[0] = 'world'`, também teremos um erro já que o tipo não bate.
+
