@@ -266,3 +266,55 @@ No caso como foi declarado que a `Array` seria do tipo `any`, foi possível arma
 
 OBS.: Sempre que possível, evite o uso do tipo `Any`, pois é exatamente par isso que o TypeScript existe. TYPE CHECK.
 
+### `Union`
+
+Quando precisarmos declarar que uma variável pode ser 2 ou mais tipos, usamos o tipo `Union`.
+
+Declaração:
+
+```typescript
+let input: number | string; //Pode colocar quantos tipos quiser > x | y | z < etc
+
+input = 10; // Ok
+
+input = 'leinaD' // Ok também
+```
+
+Exemplo:
+
+```typescript
+// Union Type
+function combine(input1: number | string, input2: number | string) {
+    let result;
+    if (typeof input1 === 'number' && typeof input2 === 'number') {
+        result = input1 + input2;
+    } else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
+}
+
+console.log(combine(13, 54)); // number number
+console.log(combine(3, 'daniel')); // number string
+```
+
+OBS: É importante a validação com o `if-else`, pois a concatenação não sabe o que vai entrar no tipo `union`, então deve ser implementada.
+
+### `Literal`
+
+É usado para especificar como o tipo deve sair. Mais usado como definição do tipo `union`.
+
+Declaração:
+
+```typescript
+function combine(input1: number | string, input2: number | string, finalConv: string) { // parametro da func 'finalConv'
+    // in progress ...
+}
+```
+
+### `Alias`
+
+```typescript
+// in progress ...
+```
+
