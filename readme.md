@@ -137,7 +137,9 @@ numero = '5'; // Ao compilar, vai retornar um erro, informando que a variavel nu
 
 `boolean`		true, false (Apenas esses dois, sem truthy ou falsy)
 
-`objetc`		{age: 30} (Qualquer objeto JavaScript, tipos mais especificos são possiveis)
+`object`		{age: 30} (Qualquer objeto JavaScript, tipos mais especificos são possiveis)
+
+`array` 		[1, 2, 3] (No caso uma `array` de `number`s', mas pode ser de qualquer coisa)
 
 ### Objetos
 
@@ -155,4 +157,43 @@ const person: { // Deixando claro como as keys vão se comportar.
 }
 ```
 
- 
+ ### Arrays
+
+```typescript
+// Declaração não tipada
+const hobbies = ['Sports', 'Cooking'];
+
+// Declaração tipada
+const hobbies: string[] = ['Sports', 'Cooking'];
+// Somente poderão ser adicionados textos à array
+
+// Exemplo de erro
+const texto: string[];
+texto = ['monitor', 10];
+							  ~~
+```
+
+Caso queira colocar elementos de tipos diferentes, use tipo `any`
+
+```typescript
+const hobbies: any[];
+hobbies = ['BombaPatch', 2021]
+// Declaração sem erros
+```
+
+Exemplo de inferring type (muito difícil traduzir isso aqui)
+
+```typescript
+const homies: string[] = [
+    'cesar',
+    'daniel',
+    'davi',
+    'eduardo'
+]
+
+for(const homie of homies){
+    console.log(homie);
+}
+```
+
+Dentro do for, foi criado uma constante chamada `homie`, que automaticamente recebe o tipo `string`, pois foi declarado que a array `homies` seria uma array de strings.

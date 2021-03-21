@@ -1,11 +1,10 @@
-const person: {
-    name: string;
-    age: number;
-    alive: boolean;
-} = {
-    name: "Daniel",
-    age: 21,
-    alive: true
-}
+const homies: string[] = [
+    'cesar',
+    'daniel',
+    'davi',
+    'eduardo'
+]
 
-console.log(person);
+for(const homie of homies){
+    console.log(homie);
+}
