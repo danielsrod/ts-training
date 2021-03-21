@@ -69,7 +69,7 @@ Após o comando, vai ser criado um arquivo com o mesmo nome mas com extensão Ja
 
 #### Pera o arquivo foi compilado, então funcionou ?
 
-Nope. O arquivo TS foi compilou e transformado para JavaScript, mas foi encontrado um erro na produção.
+Nope. O arquivo TS foi compilado e transformado para JavaScript, mas foi encontrado um erro na produção.
 
 ```powershell
 app.ts:10:17 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
