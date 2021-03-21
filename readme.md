@@ -223,3 +223,32 @@ OBS.: Se rodarmos `person.role.push('banger')`, infelizmente o TypeScript não c
 Mas caso rodemos `person.role = ['av', 3]`, teremos um erro já que os tipos não batem.
 Ou, se rodarmos `person.role[0] = 'world'`, também teremos um erro já que o tipo não bate.
 
+### Enum
+
+Basicamente criamos uma `Role` que serve como identificadores, segue abaixo como declarar.
+
+```typescript
+enum Role { ADMIN, USER, GUEST }
+```
+
+Por padrão, são atribuídos valores começando com 0 e incrementando de 1 em 1.
+
+Você também pode atribuir valores para as `Roles`.
+Mas é importante ressaltar que se você atribuir uma `string`, obrigatoriamente deverá atribuir valor para todas as roles.
+Caso você atribua o valor 100 para a primeira `role`, a próxima será 101, 102 ...
+
+```typescript
+enum Role {ADMIN, USER, GUEST};
+// ADMIN = 0, USER = 1, GUEST = 2
+
+const person = {
+    // ...
+    role: Role.USER,
+    // ...
+}
+
+if(person.role === Role.USER) {
+    console.log('Usuário'); // Vai ser 'consolado'
+}
+```
+
