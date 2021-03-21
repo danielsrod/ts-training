@@ -141,7 +141,7 @@ numero = '5'; // Ao compilar, vai retornar um erro, informando que a variavel nu
 
 `array` 		[1, 2, 3] (No caso uma `array` de `number`s', mas pode ser de qualquer coisa)
 
-### Objects
+### `Object`
 
 Em TypeScript, podemos especificar ainda mais os tipos de um objeto. Exemplo:
 
@@ -157,7 +157,7 @@ const person: { // Deixando claro como as keys vão se comportar.
 }
 ```
 
- ### Arrays
+ ### `Array`
 
 ```typescript
 // Declaração não tipada
@@ -199,7 +199,7 @@ Dentro do for, foi criado uma constante chamada `friend` , que automaticamente r
 
 OBS: na variável `friend`, podemos usar as funções básicas de string > `.toUpperCase( )` 
 
-### Tuple
+### `Tuple`
 
 As `Tuples` são basicamente `arrays` com tipo e tamanho definidos.
 
@@ -223,7 +223,7 @@ OBS.: Se rodarmos `person.role.push('banger')`, infelizmente o TypeScript não c
 Mas caso rodemos `person.role = ['av', 3]`, teremos um erro já que os tipos não batem.
 Ou, se rodarmos `person.role[0] = 'world'`, também teremos um erro já que o tipo não bate.
 
-### Enum
+### `Enum`
 
 Basicamente criamos uma `Role` que serve como identificadores, segue abaixo como declarar.
 
@@ -251,4 +251,18 @@ if(person.role === Role.USER) {
     console.log('Usuário'); // Vai ser 'consolado'
 }
 ```
+
+### `Any`
+
+Pode ser qualquer coisa
+
+```typescript
+let something: any[];
+
+something = ['Hello World', 21, false];
+```
+
+No caso como foi declarado que a `Array` seria do tipo `any`, foi possível armazenar 3 tipos diferentes dentro da mesma `array`. (`string`, `number` e `boolean`).
+
+OBS.: Sempre que possível, evite o uso do tipo `Any`, pois é exatamente par isso que o TypeScript existe. TYPE CHECK.
 
