@@ -184,16 +184,17 @@ hobbies = ['BombaPatch', 2021]
 Exemplo de inferring type (muito difícil traduzir isso aqui)
 
 ```typescript
-const homies: string[] = [
+const friends: string[] = [
     'cesar',
-    'daniel',
-    'davi',
+    'milena',
     'eduardo'
 ]
 
-for(const homie of homies){
-    console.log(homie);
+for(const friend of friends){
+    console.log(friend);
 }
 ```
 
-Dentro do for, foi criado uma constante chamada `homie`, que automaticamente recebe o tipo `string`, pois foi declarado que a array `homies` seria uma array de strings.
+Dentro do for, foi criado uma constante chamada `friend` , que automaticamente recebe o tipo `string`, pois foi declarado que a array `friends` seria uma array de strings.
+
+OBS: na variável `friend`, podemos usar as funções básicas de string > `.toUpperCase( )` 

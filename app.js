@@ -1,10 +1,9 @@
-var homies = [
+var friends = [
     'cesar',
-    'daniel',
-    'davi',
-    'eduardo'
+    'milena',
+    'eduardo',
 ];
-for (var _i = 0, homies_1 = homies; _i < homies_1.length; _i++) {
-    var homie = homies_1[_i];
-    console.log(homie);
+for (var _i = 0, friends_1 = friends; _i < friends_1.length; _i++) {
+    var friend = friends_1[_i];
+    console.log(friend.bold());
 }

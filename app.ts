@@ -1,10 +1,9 @@
-const homies: string[] = [
+const friends: string[] = [
     'cesar',
-    'daniel',
-    'davi',
-    'eduardo'
+    'milena',
+    'eduardo',
 ]
 
-for(const homie of homies){
-    console.log(homie);
+for(const friend of friends){
+    console.log(friend.toUpperCase());
 }
