@@ -308,13 +308,52 @@ Declaração:
 
 ```typescript
 function combine(input1: number | string, input2: number | string, finalConv: string) { // parametro da func 'finalConv'
-    // in progress ...
+    // passando um parâmetro literal, podemos atribuir a algumas condições
+    let result;
+    
+    if (typeof input1 === 'number' && typeof input2 === 'number') {
+        result = input1 + input2;
+    } else {
+        result = input1.toString() + input2.toString();
+    }
+    
+   if(finalConv === 'as-number') { // Parametro finalConv
+        return +result;
+    } else {
+        return result.toString();
+    }
 }
 ```
 
 ### `Alias`
 
+Podemos criar um novo `tipo` da maneira que quisermos. Declaração:
+
 ```typescript
-// in progress ...
+type Combine = 'as-number' | 'as-string'
+type number_string = number | string
+```
+
+### `Type of a return`
+
+Além de termos a possibilidade de colocar tipo nas variáveis, podemos colocar tipo nas funções;
+
+Vejamos:
+
+```typescript
+function add(n1: number, n2: number): number { // Estou deixando explicito que o return vai ser do tipo number
+    return n1 + n2; 												  // mesmo não precisando 'neste caso'
+}
+```
+
+Se você criar uma função que não retorna nada, o tipo dela será `void`. Coisa que não temos no `JavaScript`
+
+```typescript
+let result = 10; // number by inferring
+function printResult(finalResult: number) {
+    console.log('resultado final é: ' + finalResult);
+} // Não temos nenhum 'return', logo a função é do tipo void
+
+printResult(result);
 ```
 
